@@ -1,0 +1,31 @@
+name: Issue reproduction
+on: workflow_dispatch
+jobs:
+  reproduce:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+          run_install: true
+      - name: Build and run esbuild reference
+        working-directory: ./packages/main
+        run: |
+          pnpm build
+          pnpm builtWithAlias
+          pnpm builtWithoutAlias
+      - name: Run tsx case without alias
+        working-directory: ./packages/main
+        run: |
+          pnpm tsxOk
+      - name: Run tsx case with alias
+        working-directory: ./packages/main
+        run: |
+          pnpm tsxFail
