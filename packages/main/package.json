@@ -1,0 +1,23 @@
+{
+  "name": "@test/main",
+  "version": "0.0.0",
+  "private": true,
+  "engines": {
+    "node": "^20"
+  },
+  "type": "module",
+  "scripts": {
+    "tsxOk": "tsx src/thisWorksWithTsx.ts",
+    "tsxFail": "tsx src/thisFailsWithTsx.ts",
+    "build": "node ./build.js",
+    "builtWithAlias": "node dist/thisFailsWithTsx.js",
+    "builtWithoutAlias": "node dist/thisWorksWithTsx.js"
+  },
+  "devDependencies": {
+    "esbuild": "^0.21.3",
+    "tsx": "^4.10.4"
+  },
+  "dependencies": {
+    "@test/dependency": "workspace:^"
+  }
+}

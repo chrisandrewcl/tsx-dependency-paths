@@ -1,0 +1,9 @@
+{
+  "name": "tsx-dependency-paths",
+  "version": "0.0.0",
+  "engines": {
+    "node": "^20"
+  },
+  "type": "module",
+  "license": "MIT"
+}
