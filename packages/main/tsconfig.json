@@ -9,11 +9,11 @@
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "moduleResolution": "Bundler"
+    "moduleResolution": "Bundler",
 
-    // "baseUrl": ".",
-    // "paths": {
-    //   "~/*": ["src/*"]
-    // }
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
   }
 }

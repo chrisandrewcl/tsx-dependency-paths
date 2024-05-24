@@ -6,9 +6,20 @@
     "node": "^20"
   },
   "type": "module",
+  "scripts": {
+    "ts:audit": "tsc --noEmit"
+  },
+  "imports": {
+    "#self/*": [
+      "./src/*.ts"
+    ]
+  },
   "exports": {
     "./*": [
       "./src/*.ts"
     ]
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5"
   }
 }
